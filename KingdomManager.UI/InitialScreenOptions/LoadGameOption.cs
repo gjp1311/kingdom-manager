@@ -8,7 +8,8 @@ namespace KingdomManager.UI.InitialScreenOptions
     {
         public void Do()
         {
-            throw new NotImplementedException();
+            InitialScreen screen = new InitialScreen();
+            screen.Draw("Loading not implemented");
         }
 
         public bool Match(string option)

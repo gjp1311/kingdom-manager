@@ -31,6 +31,7 @@ namespace KingdomManager.UI
         public void Draw(string msg = "")
         {
             //Logo
+            Console.Clear();
             string padding = "";
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Kingdom Manager");

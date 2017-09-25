@@ -7,8 +7,9 @@ namespace KingdomManager.UI.InitialScreenOptions
     public class OptionsOption : IOption
     {
         public void Do()
-        {
-            throw new NotImplementedException();
+        {            
+            InitialScreen screen = new InitialScreen();
+            screen.Draw("Options not implemented");
         }
 
         public bool Match(string option)
