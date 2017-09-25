@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KingdomManager.Domain\KingdomManager.Domain.csproj" />
+    <ProjectReference Include="..\KingdomManager.UI\KingdomManager.UI.csproj" />
   </ItemGroup>
 
 </Project>

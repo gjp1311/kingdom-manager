@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KingdomManager.UI;
+using System;
 
 namespace KingdomManager.ConsoleApp
 {
@@ -6,7 +7,8 @@ namespace KingdomManager.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            InitialScreen screen = new InitialScreen();
+            screen.Draw();
             Console.ReadLine();
         }
     }

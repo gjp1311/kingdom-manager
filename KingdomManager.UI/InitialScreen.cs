@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace KingdomManager.UI
+{
+    public class InitialScreen
+    {
+        public void Draw()
+        {
+            //Logo
+            string padding = "                ";
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($@"{padding}****************************************************************************************");
+            Console.WriteLine($@"{padding}* _   ___                 _                  ___  ___                                  *");
+            Console.WriteLine($@"{padding}*| | / (_)               | |                 |  \/  |                                  *");
+            Console.WriteLine($@"{padding}*| |/ / _ _ __   __ _  __| | ___  _ __ ___   | .  . | __ _ _ __   __ _  __ _  ___ _ __ *");
+            Console.WriteLine($@"{padding}*|    \| | '_ \ / _` |/ _` |/ _ \| '_ ` _ \  | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '__|*");
+            Console.WriteLine($@"{padding}*| |\  \ | | | | (_| | (_| | (_) | | | | | | | |  | | (_| | | | | (_| | (_| |  __/ |   *");
+            Console.WriteLine($@"{padding}*\_| \_/_|_| |_|\__, |\__,_|\___/|_| |_| |_| \_|  |_/\__,_|_| |_|\__,_|\__, |\___|_|   *");
+            Console.WriteLine($@"{padding}*                __/ |                                                  __/ |          *");
+            Console.WriteLine($@"{padding}*               |___/                                                  |___/           *");
+            Console.WriteLine($@"{padding}****************************************************************************************");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            //Menu            
+            Console.WriteLine($@"{padding}{padding}{padding}       (N)ew Game");
+            Console.WriteLine($@"{padding}{padding}{padding}       (L)oad Game");
+            Console.WriteLine($@"{padding}{padding}{padding}       (O)ptions");
+            Console.WriteLine($@"{padding}{padding}{padding}       (E)xit");
+            //User Response
+            Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
+            Console.Write($@"{padding}{padding}{padding}       >");
+
+
+        }
+
+        public void Read()
+        {
+
+        }
+    }
+}
