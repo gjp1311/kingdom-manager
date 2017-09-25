@@ -8,7 +8,7 @@ namespace KingdomManager.ConsoleApp
         static void Main(string[] args)
         {
             InitialScreen screen = new InitialScreen();
-            screen.Draw();
+            screen.Draw();            
             Console.ReadLine();
         }
     }

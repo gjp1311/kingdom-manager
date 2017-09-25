@@ -6,7 +6,7 @@ namespace KingdomManager.UI
 {
     public class InitialScreen
     {
-        public void Draw()
+        public void Draw(string msg = "")
         {
             //Logo
             string padding = "                ";
@@ -28,15 +28,36 @@ namespace KingdomManager.UI
             Console.WriteLine($@"{padding}{padding}{padding}       (O)ptions");
             Console.WriteLine($@"{padding}{padding}{padding}       (E)xit");
             //User Response
-            Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
+            Console.WriteLine(); Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($@"{padding}{padding}{padding}       {msg}");
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write($@"{padding}{padding}{padding}       >");
-
+            
+            Read();
 
         }
 
         public void Read()
         {
+            string response = Console.ReadLine();
+            if (CheckResponse(response))
+            {
+                Console.Clear();
+                Draw($"You chose {response}");                
+            }
+            else
+            {
+                Console.Clear();
+                Draw("Wrong Answer!");                
+            }
+        }
 
+        private bool CheckResponse(string response)
+        {
+            response = response.ToLower();
+            var choices = new List<string>() { "n", "l", "o", "e" };
+            return choices.Contains(response);
         }
     }
 }
