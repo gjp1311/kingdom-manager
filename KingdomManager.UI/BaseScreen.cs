@@ -4,8 +4,9 @@ using System.Text;
 
 namespace KingdomManager.UI
 {
-    public abstract class BaseScreen
+    public interface BaseScreen
     {
-
+        void Draw(string msg = "");
+        void Read();
     }
 }

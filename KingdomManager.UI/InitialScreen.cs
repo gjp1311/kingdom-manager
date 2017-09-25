@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KingdomManager.UI
 {
-    public class InitialScreen
+    public class InitialScreen : BaseScreen
     {
         public void Draw(string msg = "")
         {
