@@ -13,7 +13,7 @@ namespace KingdomManager.UI
         private IOption loadGameOption;
         private IOption optionsOption;
         private IOption exitOption;
-        private List<IOption> options;
+
 
         public InitialScreen()
         {
@@ -26,25 +26,15 @@ namespace KingdomManager.UI
             options.Add(loadGameOption);
             options.Add(optionsOption);
             options.Add(exitOption);
+            choices = new List<string>() { "1", "2", "3", "4" };
         }
 
-        public void Draw(string msg = "")
+        public override void Draw(string msg = "")
         {
             //Logo
-            Console.Clear();
-            string padding = "";
+            Console.Clear();            
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Kingdom Manager");
-            //Console.WriteLine($@"{padding}****************************************************************************************");
-            //Console.WriteLine($@"{padding}* _   ___                 _                  ___  ___                                  *");
-            //Console.WriteLine($@"{padding}*| | / (_)               | |                 |  \/  |                                  *");
-            //Console.WriteLine($@"{padding}*| |/ / _ _ __   __ _  __| | ___  _ __ ___   | .  . | __ _ _ __   __ _  __ _  ___ _ __ *");
-            //Console.WriteLine($@"{padding}*|    \| | '_ \ / _` |/ _` |/ _ \| '_ ` _ \  | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '__|*");
-            //Console.WriteLine($@"{padding}*| |\  \ | | | | (_| | (_| | (_) | | | | | | | |  | | (_| | | | | (_| | (_| |  __/ |   *");
-            //Console.WriteLine($@"{padding}*\_| \_/_|_| |_|\__, |\__,_|\___/|_| |_| |_| \_|  |_/\__,_|_| |_|\__,_|\__, |\___|_|   *");
-            //Console.WriteLine($@"{padding}*                __/ |                                                  __/ |          *");
-            //Console.WriteLine($@"{padding}*               |___/                                                  |___/           *");
-            //Console.WriteLine($@"{padding}****************************************************************************************");
+            Console.WriteLine("Kingdom Manager");            
             Console.ForegroundColor = ConsoleColor.Gray;
             //Menu            
             Console.WriteLine($@"(1)New Game");
@@ -60,31 +50,6 @@ namespace KingdomManager.UI
 
             Read();
 
-        }
-
-        public void Read()
-        {
-            string response = Console.ReadLine();
-            if (CheckResponse(response))
-            {                
-                options.ForEach(q =>
-                {
-                    if (q.Match(response))
-                        q.Do();
-                });
-            }
-            else
-            {
-                Console.Clear();
-                Draw("Wrong Answer!");
-            }
-        }
-
-        private bool CheckResponse(string response)
-        {
-            response = response.ToLower();
-            var choices = new List<string>() { "1", "2", "3", "4" };
-            return choices.Contains(response);
         }
     }
 }
