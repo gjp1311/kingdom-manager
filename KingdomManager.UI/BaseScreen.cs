@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KingdomManager.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,6 +9,13 @@ namespace KingdomManager.UI
     {
         protected List<IOption> options;
         protected List<string> choices;
+        protected Game _game;
+
+        public BaseScreen(Game game)
+        {
+            _game = game;
+        }
+
         public abstract void Draw(string msg = "");
         public void Read()
         {
@@ -17,7 +25,7 @@ namespace KingdomManager.UI
                 options.ForEach(q =>
                 {
                     if (q.Match(response))
-                        q.Do();
+                        q.Do(_game);
                 });
             }
             else

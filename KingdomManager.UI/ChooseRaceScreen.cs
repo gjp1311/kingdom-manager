@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KingdomManager.Core;
+using KingdomManager.UI.InitialScreenOptions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +8,23 @@ namespace KingdomManager.UI
 {
     public class NewGameScreen : BaseScreen
     {
+        private IOption humanOption;
+        private IOption elfOption;
+        private IOption dwarfOption;
+        private IOption orcOption;
+        private IOption necromancerOption;
+
+        public NewGameScreen(Game game) : base(game)
+        {
+            options = new List<IOption>();
+            options.Add(new HumanOption());
+            options.Add(new HumanOption());
+            options.Add(new HumanOption());
+            options.Add(new HumanOption());
+            options.Add(new HumanOption());
+            choices = new List<string>() { "1", "2", "3", "4" ,"5"};
+        }
+
         public override void Draw(string msg = "")
         {
             Console.Clear();
@@ -25,6 +44,6 @@ namespace KingdomManager.UI
             Read();
         }
 
-      
+
     }
 }

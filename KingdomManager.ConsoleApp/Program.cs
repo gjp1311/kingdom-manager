@@ -1,4 +1,5 @@
-﻿using KingdomManager.UI;
+﻿using KingdomManager.Core;
+using KingdomManager.UI;
 using System;
 
 namespace KingdomManager.ConsoleApp
@@ -9,7 +10,8 @@ namespace KingdomManager.ConsoleApp
         {
             try
             {
-                InitialScreen screen = new InitialScreen();
+                Game game = new Game();
+                InitialScreen screen = new InitialScreen(game);
                 screen.Draw();
                 Console.ReadLine();
             }

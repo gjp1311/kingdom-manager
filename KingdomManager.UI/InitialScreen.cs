@@ -1,4 +1,5 @@
-﻿using KingdomManager.UI.InitialScreenOptions;
+﻿using KingdomManager.Core;
+using KingdomManager.UI.InitialScreenOptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,25 +8,13 @@ namespace KingdomManager.UI
 {
     public class InitialScreen : BaseScreen
     {
-
-
-        private IOption newGameOption;
-        private IOption loadGameOption;
-        private IOption optionsOption;
-        private IOption exitOption;
-
-
-        public InitialScreen()
-        {
-            newGameOption = new NewGameOption();
-            loadGameOption = new LoadGameOption();
-            optionsOption = new OptionsOption();
-            exitOption = new ExitOption();
+        public InitialScreen(Game game) : base(game)
+        {            
             options = new List<IOption>();
-            options.Add(newGameOption);
-            options.Add(loadGameOption);
-            options.Add(optionsOption);
-            options.Add(exitOption);
+            options.Add(new NewGameOption());
+            options.Add(new LoadGameOption());
+            options.Add(new OptionsOption());
+            options.Add(new ExitOption());
             choices = new List<string>() { "1", "2", "3", "4" };
         }
 

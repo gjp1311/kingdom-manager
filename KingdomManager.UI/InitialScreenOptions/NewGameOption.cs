@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KingdomManager.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,9 +7,9 @@ namespace KingdomManager.UI.InitialScreenOptions
 {
     public class NewGameOption : IOption
     {
-        public void Do()
+        public void Do(Game game)
         {            
-            NewGameScreen screen = new NewGameScreen();
+            NewGameScreen screen = new NewGameScreen(game);
             screen.Draw();
         }
 

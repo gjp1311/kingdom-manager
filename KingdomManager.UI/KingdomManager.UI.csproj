@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\KingdomManager.Core\KingdomManager.Core.csproj" />
+    <ProjectReference Include="..\KingdomManager.Domain\KingdomManager.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

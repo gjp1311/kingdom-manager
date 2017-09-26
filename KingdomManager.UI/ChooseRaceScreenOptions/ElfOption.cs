@@ -1,20 +1,21 @@
 ﻿using KingdomManager.Core;
+using KingdomManager.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace KingdomManager.UI.InitialScreenOptions
 {
-    public class ExitOption : IOption
+    public class ElfOption : IOption
     {
         public void Do(Game game)
         {
-            Environment.Exit(1);
+            game.Player.Race = ERace.Human;
         }
 
         public bool Match(string option)
         {
-            return option == "4";
+            return option == "1";
         }
     }
 }
