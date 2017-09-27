@@ -13,7 +13,8 @@ namespace KingdomManager.Core
         public string CurrentSeason { get { return Seasons[CurrentSeasonIndex]; } }
 
         public int CurrentDay { get; private set; }
-        public int LastDay { get { return 30; } }
+        public int LastDay { get { return 2; } }
+        public int CurrentYear { get; private set; }
 
         public void NewGame()
         {
@@ -26,6 +27,7 @@ namespace KingdomManager.Core
                 "Winter"
             };
 
+            CurrentYear = 0;
             CurrentDay = 1;
             CurrentSeasonIndex = 0;
         }
@@ -44,7 +46,10 @@ namespace KingdomManager.Core
         private void ChangeSeason()
         {
             if (CurrentSeasonIndex == Seasons.Count - 1)
+            {
                 CurrentSeasonIndex = 0;
+                CurrentYear++;
+            }
             else
                 CurrentSeasonIndex++;
 

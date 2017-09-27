@@ -18,7 +18,7 @@ namespace KingdomManager.UI
         public override void Draw(string msg = "")
         {
             Console.Clear();
-            Console.WriteLine($"Season: {_game.CurrentSeason} - {_game.CurrentDay}");
+            Console.WriteLine($"Year: {_game.CurrentYear} Season: {_game.CurrentSeason} - {_game.CurrentDay}");
             Console.WriteLine($"Civilization: {_game.Player.Race.ToString()} - Gold: {_game.Player.Gold} - " +
                 $"Cities: {_game.Player.Cities} - Population: {_game.Player.Population}");
             //Menu            
