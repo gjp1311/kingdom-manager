@@ -14,8 +14,8 @@ namespace KingdomManager.UI
 
         public override void Draw(string msg = "")
         {
-            Console.Clear();
-            //TODO: Implement Month/Year Cycle to show on header
+            Console.Clear();            
+            Console.WriteLine($"Season: {_game.CurrentSeason} - {_game.CurrentDay}");
             Console.WriteLine($"Civilization: {_game.Player.Race.ToString()} - Gold: {_game.Player.Gold} - " +
                 $"Cities: {_game.Player.Cities} - Population: {_game.Player.Population}");
             //User Response
