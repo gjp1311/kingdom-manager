@@ -8,5 +8,11 @@ namespace KingdomManager.Core
     public class Game
     {
         public Player Player { get; set; }
+
+
+        public void NewGame()
+        {
+            Player = new Player();
+        }
     }
 }

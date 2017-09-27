@@ -11,6 +11,8 @@ namespace KingdomManager.UI.InitialScreenOptions
         public void Do(Game game)
         {
             game.Player.Race = ERace.Human;
+            GameScreen screen = new GameScreen(game);            
+            screen.Draw();
         }
 
         public bool Match(string option)

@@ -9,5 +9,14 @@ namespace KingdomManager.Domain
         public string Id { get; set; }
         public string Name { get; set; }
         public ERace Race { get; set; }
+        public int Gold { get; set; }        
+        public int Cities { get; set; }
+        //TODO: Implement get total number of civilians, army and slaves
+        public int Population { get; set; }
+
+        public Player()
+        {
+            
+        }
     }
 }

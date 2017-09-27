@@ -10,6 +10,7 @@ namespace KingdomManager.UI.InitialScreenOptions
         public void Do(Game game)
         {            
             NewGameScreen screen = new NewGameScreen(game);
+            game.NewGame();
             screen.Draw();
         }
 

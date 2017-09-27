@@ -31,13 +31,7 @@ namespace KingdomManager.UI
             Console.WriteLine($@"(3)Options");
             Console.WriteLine($@"(4)Exit");
             //User Response
-            Console.WriteLine(); Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($@"{msg}");
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write($@">");
-
-            Read();
+            Read(msg);
 
         }
     }

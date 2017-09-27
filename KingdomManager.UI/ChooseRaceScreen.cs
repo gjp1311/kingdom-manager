@@ -8,12 +8,7 @@ namespace KingdomManager.UI
 {
     public class NewGameScreen : BaseScreen
     {
-        private IOption humanOption;
-        private IOption elfOption;
-        private IOption dwarfOption;
-        private IOption orcOption;
-        private IOption necromancerOption;
-
+        
         public NewGameScreen(Game game) : base(game)
         {
             options = new List<IOption>();
@@ -35,13 +30,8 @@ namespace KingdomManager.UI
             Console.WriteLine("(3) - Dwarf - Drunk people who live under earth and like to mine.");
             Console.WriteLine("(4) - Orcs - Brutal and tribal people.");
             Console.WriteLine("(5) - Necros - Use undead as slaves and soldiers");
-            //User Response
-            Console.WriteLine(); Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($@"{msg}");
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write($@">");
-            Read();
+            //User Response          
+            Read(msg);
         }
 
 

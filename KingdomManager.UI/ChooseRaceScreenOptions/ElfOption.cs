@@ -10,7 +10,9 @@ namespace KingdomManager.UI.InitialScreenOptions
     {
         public void Do(Game game)
         {
-            game.Player.Race = ERace.Human;
+            game.Player.Race = ERace.Elf;
+            GameScreen screen = new GameScreen(game);
+            screen.Draw();
         }
 
         public bool Match(string option)

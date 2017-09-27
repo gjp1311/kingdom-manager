@@ -17,8 +17,14 @@ namespace KingdomManager.UI
         }
 
         public abstract void Draw(string msg = "");
-        public void Read()
+        public void Read(string msg)
         {
+            Console.WriteLine(); Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($@"{msg}");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write($@">");
+
             string response = Console.ReadLine();
             if (CheckResponse(response) && options != null && options.Count > 0)
             {
