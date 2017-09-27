@@ -9,11 +9,12 @@ namespace KingdomManager.UI
     {
         protected List<IOption> options;
         protected List<string> choices;
-        protected Game _game;
+        protected Game _game;        
 
         public BaseScreen(Game game)
         {
             _game = game;
+            options = new List<IOption>();
         }
 
         public abstract void Draw(string msg = "");
@@ -31,7 +32,7 @@ namespace KingdomManager.UI
                 options.ForEach(q =>
                 {
                     if (q.Match(response))
-                        q.Do(_game);
+                        q.Do(_game,this);
                 });
             }
             else

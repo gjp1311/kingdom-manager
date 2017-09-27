@@ -7,7 +7,7 @@ namespace KingdomManager.UI.InitialScreenOptions
 {
     public class ExitOption : IOption
     {
-        public void Do(Game game)
+        public void Do(Game game,BaseScreen currentScreen)
         {
             Environment.Exit(1);
         }

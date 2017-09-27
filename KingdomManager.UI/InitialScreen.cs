@@ -10,7 +10,7 @@ namespace KingdomManager.UI
     {
         public InitialScreen(Game game) : base(game)
         {            
-            options = new List<IOption>();
+            
             options.Add(new NewGameOption());
             options.Add(new LoadGameOption());
             options.Add(new OptionsOption());

@@ -7,11 +7,11 @@ namespace KingdomManager.UI.InitialScreenOptions
 {
     public class NewGameOption : IOption
     {
-        public void Do(Game game)
-        {            
-            NewGameScreen screen = new NewGameScreen(game);
+        public void Do(Game game, BaseScreen currentScreen)
+        {
+            currentScreen = new NewGameScreen(game);
             game.NewGame();
-            screen.Draw();
+            currentScreen.Draw();
         }
 
         public bool Match(string option)

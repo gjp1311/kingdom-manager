@@ -7,10 +7,10 @@ namespace KingdomManager.UI.InitialScreenOptions
 {
     public class LoadGameOption : IOption
     {
-        public void Do(Game game)
+        public void Do(Game game, BaseScreen currentScreen)
         {
-            InitialScreen screen = new InitialScreen(game);
-            screen.Draw("Loading not implemented");
+            currentScreen = new InitialScreen(game);
+            currentScreen.Draw("Loading not implemented");
         }
 
         public bool Match(string option)

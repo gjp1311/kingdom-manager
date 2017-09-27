@@ -7,10 +7,10 @@ namespace KingdomManager.UI.InitialScreenOptions
 {
     public class OptionsOption : IOption
     {
-        public void Do(Game game)
-        {            
-            InitialScreen screen = new InitialScreen(game);
-            screen.Draw("Options not implemented");
+        public void Do(Game game, BaseScreen currentScreen)
+        {
+            currentScreen = new InitialScreen(game);
+            currentScreen.Draw("Options not implemented");
         }
 
         public bool Match(string option)

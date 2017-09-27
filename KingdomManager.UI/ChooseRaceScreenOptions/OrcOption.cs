@@ -8,9 +8,11 @@ namespace KingdomManager.UI.InitialScreenOptions
 {
     public class OrcOption : IOption
     {
-        public void Do(Game game)
+        public void Do(Game game, BaseScreen currentScreen)
         {
-            game.Player.Race = ERace.Human;
+            game.Player.Race = ERace.Orcs;
+            currentScreen = new GameScreen(game);
+            currentScreen.Draw();
         }
 
         public bool Match(string option)

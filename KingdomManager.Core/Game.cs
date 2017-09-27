@@ -9,9 +9,11 @@ namespace KingdomManager.Core
     {
         public Player Player { get; set; }
         public List<string> Seasons { get; set; }
-        public string CurrentSeason { get; set; }
-        public int CurrentDay { get; set; }
-        private const int LastDay = 30;
+        private int CurrentSeasonIndex { get; set; }
+        public string CurrentSeason { get { return Seasons[CurrentSeasonIndex]; } }
+
+        public int CurrentDay { get; private set; }
+        public int LastDay { get { return 30; } }
 
         public void NewGame()
         {
@@ -23,8 +25,29 @@ namespace KingdomManager.Core
                 "Autumn",
                 "Winter"
             };
-            CurrentSeason = Seasons[0];
+
             CurrentDay = 1;
+            CurrentSeasonIndex = 0;
+        }
+
+        public void ChangeData()
+        {
+            if (CurrentDay < LastDay)
+                CurrentDay++;
+            else
+            {
+                CurrentDay = 1;
+                ChangeSeason();
+            }
+        }
+
+        private void ChangeSeason()
+        {
+            if (CurrentSeasonIndex == Seasons.Count - 1)
+                CurrentSeasonIndex = 0;
+            else
+                CurrentSeasonIndex++;
+
         }
     }
 }

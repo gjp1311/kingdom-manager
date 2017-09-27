@@ -8,11 +8,11 @@ namespace KingdomManager.UI.InitialScreenOptions
 {
     public class ElfOption : IOption
     {
-        public void Do(Game game)
+        public void Do(Game game, BaseScreen currentScreen)
         {
             game.Player.Race = ERace.Elf;
-            GameScreen screen = new GameScreen(game);
-            screen.Draw();
+            currentScreen = new GameScreen(game);
+            currentScreen.Draw();
         }
 
         public bool Match(string option)

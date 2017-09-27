@@ -8,6 +8,6 @@ namespace KingdomManager.UI
     public interface IOption
     {
         bool Match(string option);
-        void Do(Game game);
-    }    
+        void Do(Game game, BaseScreen currentScreen);
+    }
 }

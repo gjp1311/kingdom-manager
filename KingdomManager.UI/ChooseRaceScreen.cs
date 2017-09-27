@@ -10,8 +10,7 @@ namespace KingdomManager.UI
     {
         
         public NewGameScreen(Game game) : base(game)
-        {
-            options = new List<IOption>();
+        {            
             options.Add(new HumanOption());
             options.Add(new HumanOption());
             options.Add(new HumanOption());
