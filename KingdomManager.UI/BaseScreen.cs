@@ -48,5 +48,16 @@ namespace KingdomManager.UI
             response = response.ToLower();
             return choices.Contains(response);
         }
+
+        protected void DrawOptions()
+        {
+            if (options != null)
+            {
+                options.ForEach(q =>
+                {
+                    Console.WriteLine(q.OptionText());
+                });
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using KingdomManager.Core;
-using KingdomManager.UI.InitialScreenOptions;
+using KingdomManager.UI.ChooseRaceScreenOptions;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,10 +13,10 @@ namespace KingdomManager.UI
         public NewGameScreen(Game game) : base(game)
         {            
             options.Add(new HumanOption());
-            options.Add(new HumanOption());
-            options.Add(new HumanOption());
-            options.Add(new HumanOption());
-            options.Add(new HumanOption());            
+            options.Add(new ElfOption());
+            options.Add(new DwarfOption());
+            options.Add(new OrcOption());
+            options.Add(new NecromancerOption());            
         }
 
         public override void Draw(string msg = "")
@@ -23,11 +24,7 @@ namespace KingdomManager.UI
             Console.Clear();
             //Options
             Console.WriteLine("Choose your Civilization :");
-            Console.WriteLine("(1) - Human - Common people with nothing unusual");
-            Console.WriteLine("(2) - Elf - Immortal beings with magic affinity");
-            Console.WriteLine("(3) - Dwarf - Drunk people who live under earth and like to mine.");
-            Console.WriteLine("(4) - Orcs - Brutal and tribal people.");
-            Console.WriteLine("(5) - Necros - Use undead as slaves and soldiers");
+            DrawOptions();
             //User Response          
             Read(msg);
         }

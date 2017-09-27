@@ -1,23 +1,24 @@
 ﻿using KingdomManager.Core;
 using KingdomManager.Domain;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KingdomManager.UI.InitialScreenOptions
+namespace KingdomManager.UI.ChooseRaceScreenOptions
 {
-    public class HumanOption : IOption
+    public class HumanOption : RaceOptions
     {
-        public void Do(Game game, BaseScreen currentScreen)
-        {
-            game.Player.Race = ERace.Human;
-            currentScreen = new GameScreen(game);
-            currentScreen.Draw();
-        }
+        public HumanOption() : base(ERace.Human) { }
 
-        public bool Match(string option)
+        public override bool Match(string option)
         {
             return option == "1";
+        }
+
+        public override string OptionText()
+        {
+            return "(1) - Human - Common people with nothing unusual";
         }
     }
 }

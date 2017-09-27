@@ -1,19 +1,15 @@
-﻿using System;
+﻿using KingdomManager.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using KingdomManager.Core;
-using KingdomManager.Domain;
-using KingdomManager.UI.InitialScreenOptions;
-using KingdomManager.UI.GameScreenOptions;
 
 namespace KingdomManager.UI
 {
-    public class GameScreen : BaseScreen
+    public class BuildScreen : BaseScreen
     {
-        public GameScreen(Game game) : base(game)
+        public BuildScreen(Game game) : base(game)
         {
-            options.Add(new BuildOptions());
-            options.Add(new EndTurnOption());            
+            //options.Add(new EndTurnOption());
         }
 
         public override void Draw(string msg = "")
@@ -24,8 +20,8 @@ namespace KingdomManager.UI
                 $"Cities: {_game.Player.Cities} - Population: {_game.Player.Population}");
             //Menu            
             Console.WriteLine();
-            Console.WriteLine("Your Actions");
-            DrawOptions();
+            Console.WriteLine("Build ");
+            Console.WriteLine($@"(1)");
             //User Response
             Read(msg);
         }

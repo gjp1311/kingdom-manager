@@ -4,20 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KingdomManager.UI.InitialScreenOptions
+namespace KingdomManager.UI.ChooseRaceScreenOptions
 {
-    public class ElfOption : IOption
+    public class ElfOption : RaceOptions
     {
-        public void Do(Game game, BaseScreen currentScreen)
-        {
-            game.Player.Race = ERace.Elf;
-            currentScreen = new GameScreen(game);
-            currentScreen.Draw();
-        }
+        public ElfOption() : base(ERace.Elf) { }
 
-        public bool Match(string option)
+        public override bool Match(string option)
         {
             return option == "2";
+        }
+
+        public override string OptionText()
+        {
+            return "(2) - Elf - Immortal beings with magic affinity";
         }
     }
 }

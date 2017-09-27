@@ -17,5 +17,10 @@ namespace KingdomManager.UI.InitialScreenOptions
         {
             return option == "2";
         }
+
+        public string OptionText()
+        {
+            return "(2)Load Game";
+        }
     }
 }

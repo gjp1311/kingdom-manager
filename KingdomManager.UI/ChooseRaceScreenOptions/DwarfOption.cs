@@ -1,23 +1,24 @@
 ﻿using KingdomManager.Core;
 using KingdomManager.Domain;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KingdomManager.UI.InitialScreenOptions
+namespace KingdomManager.UI.ChooseRaceScreenOptions
 {
-    public class DwarfOption : IOption
+    public class DwarfOption : RaceOptions
     {
-        public void Do(Game game, BaseScreen currentScreen)
-        {
-            game.Player.Race = ERace.Dwarf;
-            currentScreen = new GameScreen(game);
-            currentScreen.Draw();
-        }
+        public DwarfOption() : base(ERace.Dwarf) {}
 
-        public bool Match(string option)
+        public override bool Match(string option)
         {
             return option == "3";
+        }
+
+        public override string OptionText()
+        {
+            return "(3) - Dwarf - Drunk people who live under earth and like to mine.";
         }
     }
 }

@@ -16,5 +16,10 @@ namespace KingdomManager.UI.GameScreenOptions
         {
             return option == "1";
         }
+
+        public string OptionText()
+        {
+            return "(1) Build";
+        }
     }
 }

@@ -4,20 +4,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KingdomManager.UI.InitialScreenOptions
+namespace KingdomManager.UI.ChooseRaceScreenOptions
 {
-    public class OrcOption : IOption
+    public class OrcOption : RaceOptions
     {
-        public void Do(Game game, BaseScreen currentScreen)
-        {
-            game.Player.Race = ERace.Orcs;
-            currentScreen = new GameScreen(game);
-            currentScreen.Draw();
-        }
-
-        public bool Match(string option)
+        public OrcOption() : base(ERace.Orcs) { }
+        public override bool Match(string option)
         {
             return option == "4";
+        }
+
+        public override string OptionText()
+        {
+            return "(4) - Orcs - Brutal and tribal people.";
         }
     }
 }

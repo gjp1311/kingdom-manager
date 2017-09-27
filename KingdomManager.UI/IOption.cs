@@ -9,5 +9,6 @@ namespace KingdomManager.UI
     {
         bool Match(string option);
         void Do(Game game, BaseScreen currentScreen);
+        string OptionText();
     }
 }
