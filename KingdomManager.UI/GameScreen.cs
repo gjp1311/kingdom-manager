@@ -11,8 +11,7 @@ namespace KingdomManager.UI
     {
         public GameScreen(Game game) : base(game)
         {
-            options.Add(new EndTurnOption());
-            choices = new List<string>() { "12" };
+            options.Add(new EndTurnOption());            
         }
 
         public override void Draw(string msg = "")

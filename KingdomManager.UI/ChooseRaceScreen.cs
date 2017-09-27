@@ -15,8 +15,7 @@ namespace KingdomManager.UI
             options.Add(new HumanOption());
             options.Add(new HumanOption());
             options.Add(new HumanOption());
-            options.Add(new HumanOption());
-            choices = new List<string>() { "1", "2", "3", "4" ,"5"};
+            options.Add(new HumanOption());            
         }
 
         public override void Draw(string msg = "")

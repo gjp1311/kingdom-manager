@@ -9,7 +9,7 @@ namespace KingdomManager.UI
     {
         protected List<IOption> options;
         protected List<string> choices;
-        protected Game _game;        
+        protected Game _game;
 
         public BaseScreen(Game game)
         {
@@ -27,19 +27,19 @@ namespace KingdomManager.UI
             Console.Write($@">");
 
             string response = Console.ReadLine();
-            if (CheckResponse(response) && options != null && options.Count > 0)
+            if (options != null)
             {
                 options.ForEach(q =>
                 {
                     if (q.Match(response))
-                        q.Do(_game,this);
+                    {
+                        q.Do(_game, this);
+                        return;
+                    }
                 });
             }
-            else
-            {
-                Console.Clear();
-                Draw("Wrong Answer!");
-            }
+            Console.Clear();
+            Draw("Wrong Answer!");
         }
 
         private bool CheckResponse(string response)

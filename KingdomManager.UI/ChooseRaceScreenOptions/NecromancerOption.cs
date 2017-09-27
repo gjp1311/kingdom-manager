@@ -17,7 +17,7 @@ namespace KingdomManager.UI.InitialScreenOptions
 
         public bool Match(string option)
         {
-            return option == "1";
+            return option == "5";
         }
     }
 }

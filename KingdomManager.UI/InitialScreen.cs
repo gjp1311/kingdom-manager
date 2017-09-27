@@ -14,8 +14,7 @@ namespace KingdomManager.UI
             options.Add(new NewGameOption());
             options.Add(new LoadGameOption());
             options.Add(new OptionsOption());
-            options.Add(new ExitOption());
-            choices = new List<string>() { "1", "2", "3", "4" };
+            options.Add(new ExitOption());            
         }
 
         public override void Draw(string msg = "")
