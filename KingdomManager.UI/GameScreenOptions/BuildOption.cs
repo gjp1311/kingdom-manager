@@ -5,11 +5,12 @@ using KingdomManager.Core;
 
 namespace KingdomManager.UI.GameScreenOptions
 {
-    public class BuildOptions : IOption
+    public class BuildOption : IOption
     {
         public void Do(Game game, BaseScreen currentScreen)
         {
-            throw new NotImplementedException();
+            currentScreen = new BuildScreen(game);            
+            currentScreen.Draw();
         }
 
         public bool Match(string option)

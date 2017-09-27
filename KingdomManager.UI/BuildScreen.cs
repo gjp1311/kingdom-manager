@@ -1,4 +1,5 @@
 ﻿using KingdomManager.Core;
+using KingdomManager.UI.BuildOptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,19 +10,21 @@ namespace KingdomManager.UI
     {
         public BuildScreen(Game game) : base(game)
         {
-            //options.Add(new EndTurnOption());
+            options.Add(new HovelsOption());
+            options.Add(new HouseOption());
+            options.Add(new BackOption<GameScreen>());
         }
 
         public override void Draw(string msg = "")
         {
             Console.Clear();
-            Console.WriteLine($"Year: {_game.CurrentYear} Season: {_game.CurrentSeason} - {_game.CurrentDay}");
+            Console.WriteLine($"Year: {_game.CurrentYear} Season: {_game.CurrentSeason}");
             Console.WriteLine($"Civilization: {_game.Player.Race.ToString()} - Gold: {_game.Player.Gold} - " +
-                $"Cities: {_game.Player.Cities} - Population: {_game.Player.Population}");
+                $"Population: {_game.Player.Population}");
             //Menu            
             Console.WriteLine();
-            Console.WriteLine("Build ");
-            Console.WriteLine($@"(1)");
+            Console.WriteLine("*Build Menu*");
+            DrawOptions();
             //User Response
             Read(msg);
         }
