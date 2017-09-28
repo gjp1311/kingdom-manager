@@ -16,5 +16,18 @@ namespace KingdomManager.Domain
             Buildings = new List<Building>();
             Food = 10;
         }
+
+        public void AddFood(int amount)
+        {
+            Food += amount;
+        }
+
+        public void RemoveFood(int amount)
+        {
+            if (Food - amount < 0)
+                Food = 0;
+            else
+                Food -= amount;
+        }
     }
 }

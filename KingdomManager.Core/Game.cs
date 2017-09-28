@@ -33,6 +33,7 @@ namespace KingdomManager.Core
 
         public void EndTurn()
         {
+            Player.City.Buildings.ForEach(q => { q.Turn(Player); });
             ChangeData();
         }
 
