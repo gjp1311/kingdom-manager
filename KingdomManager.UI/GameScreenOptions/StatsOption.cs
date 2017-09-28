@@ -1,26 +1,26 @@
-﻿using KingdomManager.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using KingdomManager.Core;
 
 namespace KingdomManager.UI.GameScreenOptions
 {
-    public class EndTurnOption : IOption
+    public class StatsOption : IOption
     {
         public void Do(Game game, BaseScreen currentScreen)
         {
-            game.EndTurn();
+            currentScreen = new StatsScreen(game);            
             currentScreen.Draw();
         }
 
         public bool Match(string option)
         {
-            return option == "12";
+            return option == "2";
         }
 
         public string OptionText()
         {
-            return "(12) End Turn";
+            return "(2) Stats";
         }
     }
 }

@@ -13,15 +13,14 @@ namespace KingdomManager.UI
         public GameScreen(Game game) : base(game)
         {
             options.Add(new BuildOption());
+            options.Add(new StatsOption());
             options.Add(new EndTurnOption());            
         }
 
         public override void Draw(string msg = "")
         {
             Console.Clear();
-            Console.WriteLine($"Year: {_game.CurrentYear} Season: {_game.CurrentSeason}");
-            Console.WriteLine($"Civilization: {_game.Player.Race.ToString()} - Gold: {_game.Player.Gold} - " +
-                $"Population: {_game.Player.Population}");
+            _game.PrintHeader();
             //Menu            
             Console.WriteLine();
             Console.WriteLine("Your Actions");

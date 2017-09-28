@@ -8,7 +8,7 @@ namespace KingdomManager.Core
     public class Game
     {
         public Player Player { get; set; }
-        public List<string> Seasons { get; set; }        
+        public List<string> Seasons { get; set; }
         private int CurrentSeasonIndex { get; set; }
         public string CurrentSeason { get { return Seasons[CurrentSeasonIndex]; } }
 
@@ -25,11 +25,16 @@ namespace KingdomManager.Core
                 "Winter"
             };
 
-            CurrentYear = 0;            
-            CurrentSeasonIndex = 0;           
+            CurrentYear = 0;
+            CurrentSeasonIndex = 0;
         }
 
-        public void ChangeData()
+        public void EndTurn()
+        {
+            ChangeData();
+        }
+
+        private void ChangeData()
         {
             if (CurrentSeasonIndex == Seasons.Count - 1)
             {
@@ -38,6 +43,12 @@ namespace KingdomManager.Core
             }
             else
                 CurrentSeasonIndex++;
+        }
+
+        public void PrintHeader()
+        {
+            Console.WriteLine($"Year: {CurrentYear} Season: {CurrentSeason}");
+            Console.WriteLine(Player.Header());
         }
     }
 }
