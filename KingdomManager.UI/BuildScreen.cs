@@ -22,12 +22,14 @@ namespace KingdomManager.UI
             Console.WriteLine($"Year: {_game.CurrentYear} Season: {_game.CurrentSeason}");
             Console.WriteLine($"Civilization: {_game.Player.Race.ToString()} - Gold: {_game.Player.Gold} - " +
                 $"Population: {_game.Player.Population}");
+            Console.WriteLine("Current Buildings :");
             Database.Buildings.ForEach(q =>
-            {
+            {                
                 var count = _game.Player.City.Buildings.Count(b => b.Id == q.Id);
                 if (count > 0)
                     Console.WriteLine($"{q.Name} - {count}");
             });
+            Console.WriteLine();
             //Menu            
             Console.WriteLine();
             Console.WriteLine("*Build Menu*");

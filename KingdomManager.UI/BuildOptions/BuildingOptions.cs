@@ -23,8 +23,8 @@ namespace KingdomManager.UI.BuildOptions
             int price = _building.Price * _buildCount;
             if (game.Player.Gold >= price)
             {
-                var times = Enumerable.Range(0, _buildCount).ToList();
-                times.ForEach(q => { game.Player.City.Buildings.Add(_building.Build()); });
+                Enumerable.Range(0, _buildCount).ToList()
+                    .ForEach(q => { game.Player.City.Buildings.Add(_building.Build()); });
                 game.Player.Gold -= price;
                 currentScreen = new BuildScreen(game);
                 currentScreen.Draw();
