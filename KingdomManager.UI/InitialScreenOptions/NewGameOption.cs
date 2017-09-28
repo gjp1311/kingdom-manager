@@ -6,11 +6,12 @@ using System.Text;
 namespace KingdomManager.UI.InitialScreenOptions
 {
     public class NewGameOption : IOption
-    {        
+    {
 
         public void Do(Game game, BaseScreen currentScreen)
         {
-            currentScreen = new NewGameScreen(game);
+            //currentScreen = new NewGameScreen(game);
+            currentScreen = new GameScreen(game);
             game.NewGame();
             currentScreen.Draw();
         }

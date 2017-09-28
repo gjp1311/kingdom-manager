@@ -16,13 +16,13 @@ namespace KingdomManager.Domain
         public Player()
         {
             City = new City();
-            Gold = 99999;
+            Gold = 100;
         }
 
         public string Header()
         {
             return $"Civilization: {Race.ToString()} - Gold: {Gold} - " +
-                $"Population: {City.Population}";
+                $"Population: {City.Population} - Food: {City.Food}";
         }
     }
 }

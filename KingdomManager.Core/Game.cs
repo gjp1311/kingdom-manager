@@ -17,6 +17,8 @@ namespace KingdomManager.Core
         public void NewGame()
         {
             Player = new Player();
+            //TODO: Only for testing
+            Player.Race = ERace.Human;
             Seasons = new List<string>()
             {
                 "Spring",
