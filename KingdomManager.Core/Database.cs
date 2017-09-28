@@ -9,12 +9,18 @@ namespace KingdomManager.Core
     {
         public static List<Building> Buildings = new List<Building>()
         {
-            new Building(1,"Hovel",
-                "Home for the poorest peasants.",
-                1),
+            new Building(1,"Farm",
+                "Houses 10 peasants. Generates food.",
+                10),
             new Building(2,"House",
-                "A better home for your peasants.",
-                5)
+                "Houses 5 peasants. Generates tax revenue.",
+                5),
+            new Building(3,"Market",
+                "Needs 10 peasants. Generates tax revenue and sells food.",
+                25),
+            new Building(4,"Granary",
+                "Needs 30 peasants. Holds food for the market to sell.",
+                50)
     };
 
 

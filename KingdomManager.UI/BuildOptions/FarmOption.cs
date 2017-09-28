@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace KingdomManager.UI.BuildOptions
 {
-    public class HovelsOption : BuildingOptions
+    public class FarmOption : BuildingOptions
     {
-        public HovelsOption() : base(1)
+        public FarmOption() : base(1)
         {
         }
     }

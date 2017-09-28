@@ -20,12 +20,10 @@ namespace KingdomManager.UI.BuildOptions
 
         public void Do(Game game, BaseScreen currentScreen)
         {
-            int price = _building.Price * _buildCount;
-            if (game.Player.Gold >= price)
+            if (_building != null && game.Player.Gold >= _building.Price)
             {
-                Enumerable.Range(0, _buildCount).ToList()
-                    .ForEach(q => { game.Player.City.Buildings.Add(_building.Build()); });
-                game.Player.Gold -= price;
+                game.Player.City.Buildings.Add(_building.Build());
+                game.Player.Gold -= _building.Price;
                 currentScreen = new BuildScreen(game);
                 currentScreen.Draw();
             }
@@ -43,7 +41,7 @@ namespace KingdomManager.UI.BuildOptions
 
         public string OptionText()
         {
-            return $"({_building.Id}) {_buildCount} {_building.Name}s - {_building.Price * _buildCount} gp - {_building.Description}";
+            return $"({_building.Id}){_building.Name}: {_building.Price}gp {_building.Description}";
         }
     }
 }

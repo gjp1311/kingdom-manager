@@ -11,8 +11,10 @@ namespace KingdomManager.UI
     {
         public BuildScreen(Game game) : base(game)
         {
-            options.Add(new HovelsOption());
+            options.Add(new FarmOption());
             options.Add(new HouseOption());
+            options.Add(new MarketOption());
+            options.Add(new GranaryOption());
             options.Add(new BackOption<GameScreen>());
         }
 
