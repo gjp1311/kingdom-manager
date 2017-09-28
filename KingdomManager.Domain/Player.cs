@@ -17,6 +17,7 @@ namespace KingdomManager.Domain
         public Player()
         {
             City = new City();
+            Gold = 99999;
         }
     }
 }
